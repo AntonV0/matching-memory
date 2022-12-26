@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { Score } from './features/score/Score.js'; //CHANGE
+import { Board } from './features/board/Board.js'; //CHANGE
+// Add import statements below
 
-function App() {
+
+
+const App = () => {
+  // Add dispatch variable below
+  
+
+  const startGameHandler = () => {
+    // Add action dispatch below
+    
+  };
+
+  const tryAgainHandler = () => {
+    // Add action dispatch below
+    
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Score />
+      <Board />
+      <footer className="footer">
+        <button onClick={startGameHandler} className="start-button">
+          Start Game
+        </button>
+        <button onClick={tryAgainHandler} className="try-new-pair-button">
+          Try New Pair
+        </button>
+      </footer>
     </div>
   );
-}
+};
 
 export default App;
