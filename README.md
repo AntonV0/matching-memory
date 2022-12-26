@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Matching Memory
+## Project #54 from Codecademy's Full Stack Engineer Career Path
+### By Anton Vlasenko (AntonV0)  
+## Project Outline
+This project is a single-player card matching game made with the React-Redux library. The player is presented with 12 cards which are revealed when clicked (up to 2 cards can be revealed at a time). When the revealed cards are identical, they do not revert back to their hidden state, and the player scores 2 points. The game is won when all 12 cards are revealed.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The application consists of 5 React components:
+- App: The root component, App renders the Score and Board components
+- Score: Child of the App component, Score displays the number of matched cards
+- Board: Child of the App component, Board creates the card grid for gameplay
+- CardRow: Child of the Board component, CardRow renders a row of Card components
+- Card: Child of the CardRow component, Card displays the card content when flipped over
 
-## Available Scripts
+The application state is an array of 12 objects with each object representing a card. All objects have 4 properties:
+- id
+- contents
+- visible
+- matched
 
-In the project directory, you can run:
+There are 3 actions that make the game function as intended:
+- setGame: randomises the card array and sets visible and matched of all cards to false
+- flipCard: sets visible of the specified card id to true
+- resetCards sets visible to false on unmatched cards
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## What I Learned
+- Importing and implementing a "Provider" component from the react-redux library (to give descendant components access to the Redux store without using props)
+- Implementing selectors (pure functions that are used to access sections of state in the Redux store)
+- Retrieving data from the store with useSelector()
+- Dispatching actions with useDispatch()
+- Understanding that a nested component can access data and dispatch actions as easily as a higher-level component
+***
+*Please note that in most cases, in each project, the first or second commit is the starter code provided by Codecademy.*
